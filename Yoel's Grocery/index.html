@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grocery Shop - Walmart Style</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">GroceryMart</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#deals">Deals</a></li>
+        <li><a href="#cart">Cart</a></li>
+        <li><a href="#signup">Sign Up</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to GroceryMart</h1>
+    <p>Fresh Fruits and milk!</p>
+  </section>
+
+  <section id="products" class="product-grid">
+    <div class="product">
+      <img src="https://imgs.search.brave.com/T54urJLFUD-vCjG-Oc3KCay5VpkyD7IYhbRIjeTETFE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzUwLzZi/LzRlLzUwNmI0ZWQx/ZjIwMDg1ZDY4Yjhi/NGY0MDNiYjExMGQ0/LmpwZw" alt="Fresh Apples">
+      <h3>Fresh Apples</h3>
+      <p>$5.99 / kg</p>
+      <button onclick="addToCart('Fresh Apples', 2.99)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://imgs.search.brave.com/MdBXvzMrROfPIj7Bm4GWgHFRCnHrF2xkL2tUw0BGirM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNjM5/MTAyMzYwL3Bob3Rv/L2JvdHRsZS1vZi1t/aWxrLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1pN2xLYXJI/M1p2V0RWYTZJamgz/U0Q5ckxfeTJzckRf/RFFzY19BczVtZnhr/PQ" alt="Organic Milk">
+      <h3>Organic Milk</h3>
+      <p>$3.49/bottle</p>
+      <button onclick="addToCart('Organic Milk', 3.49)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://imgs.search.brave.com/xQPjPBTO34vmcB23FnjdP69KS0UFKfm3FY4m_BJPREU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTgy/MTgyMTgyL3Bob3Rv/L2Nsb3NlLXVwLW9m/LXRocmVlLWZyZXNo/LWJhbmFuYXMtb24t/YS13aGl0ZS1iYWNr/Z3JvdW5kLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1qeTdG/N1psUE5tVzMtaXlI/MHpCOTdUUEhxTFJG/emhBckRoSE5qUjRH/UmEwPQ" alt="Bananas">
+      <h3>Bananas</h3>
+      <p>$3.29 / kg</p>
+      <button onclick="addToCart('Bananas', 1.29)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://imgs.search.brave.com/LFQgfZ3c4NW9blTEIwSGi0X-74fYNAM2mI9vkwJoHf8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTgy/MzU1Nzc4L3Bob3Rv/L29yYW5nZS5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9VDVt/LWpER2hOc0dfNjR2/Y2FtOG8tNENzNVpF/TDkwUWxYQXVZMlZD/WDc0MD0" alt="Oranges">
+      <h3>Oranges</h3>
+      <p>$5.49 / kg</p>
+      <button onclick="addToCart('Oranges', 2.49)">Add to Cart</button>
+    </div>
+    
+  </section>
+
+  <section id="cart">
+    <h2>Shopping Cart</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="total">0.00</span></p>
+  </section>
+
+  <section id="signup" class="auth-form">
+    <h2>Sign Up</h2>
+    <form onsubmit="handleSignup(event)">
+      <label>Full Name</label>
+      <input type="text" placeholder="Your full name" required />
+
+      <label>Username</label>
+      <input type="text" placeholder="Username" required />
+
+      <label>Email Address</label>
+      <input type="email" placeholder="Email" required />
+
+      <label>Password</label>
+      <input type="password" placeholder="Password" required />
+
+      <label>Confirm Password</label>
+      <input type="password" placeholder="Confirm Password" required />
+
+      <button type="submit">Create Account</button>
+    </form>
+  </section>
+
+  <section id="login" class="auth-form">
+    <h2>Login</h2>
+    <form onsubmit="handleLogin(event)">
+      <label>Email Address</label>
+      <input type="email" placeholder="Email" required />
+
+      <label>Password</label>
+      <input type="password" placeholder="Password" required />
+
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 GroceryMart. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const cartItems = [];
+
+    function addToCart(productName, price) {
+      cartItems.push({ name: productName, price });
+      renderCart();
+    }
+
+    function removeFromCart(index) {
+      cartItems.splice(index, 1);
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartList = document.getElementById("cart-items");
+      const totalElem = document.getElementById("total");
+
+      cartList.innerHTML = "";
+      let total = 0;
+
+      cartItems.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `${item.name} - $${item.price.toFixed(2)} <button onclick="removeFromCart(${index})">Remove</button>`;
+        cartList.appendChild(li);
+        total += item.price;
+      });
+
+      totalElem.textContent = total.toFixed(2);
+    }
+
+    function handleSignup(event) {
+      event.preventDefault();
+      alert("Sign up successful (mock)");
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+      alert("Login successful (mock)");
+    }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2e7d32;
+      padding: 1rem 2rem;
+      color: white;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .hero {
+      text-align: center;
+      background: #c8e6c9;
+      padding: 2rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .product {
+      background: white;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1b5e20;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #2e7d32;
+      color: white;
+    }
+
+    .auth-form {
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    }
+
+    .auth-form h2 {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .auth-form label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: bold;
+    }
+
+    .auth-form input {
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</body>
+</html>
